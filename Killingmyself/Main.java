@@ -18,15 +18,18 @@ class Main {
 		 map[7]=new Places("Boss");
 		 map[8]=new Places("8");
 		 map[9]=new Places("9");
-		 
-//		 		map[0].dodajPrzejscie(null, mapa[1], null, null);
-//		 		map[1].dodajPrzejscie(mapa[3], mapa[2], null, mapa[0]);
-//		 		map[2].dodajPrzejscie(null, null, null, mapa[1]);
-//		 		map[3].dodajPrzejscie(mapa[4], null, mapa[1], null);
-//		 		map[4].dodajPrzejscie(mapa[5], mapa[6], mapa[3], null);
-//		 		map[5].dodajPrzejscie(null, null, mapa[4], null);
-//		 		map[6].dodajPrzejscie(null, null, null, mapa[4]);
-//		 		
+	 
+		 map[0].dodajPrzejscie(null, null, map[1], null);
+		 map[1].dodajPrzejscie(null, null, null, null);
+		 map[2].dodajPrzejscie(map[4], map[0], null, map[3]);
+		 map[3].dodajPrzejscie(null, map[2], null, null);
+		 map[4].dodajPrzejscie(map[5], null, map[2], null);
+		 map[5].dodajPrzejscie(map[8], null, map[4], map[6]);
+		 map[6].dodajPrzejscie(null, map[5], null, map[7]);
+		 map[7].dodajPrzejscie(null, map[6], null, null);
+		 map[8].dodajPrzejscie(null, map[9], map[5], null);
+		 map[9].dodajPrzejscie(null, null, null, map[8]);
+	 		
 		 		Places aktualneMiejsce = map[0];
 		 		Scanner scan = new Scanner(System.in);
 		 		char wybor;
@@ -38,20 +41,20 @@ class Main {
 		 		do {
 		 			System.out.println("Twój wybór: ");
 		 			wybor = scan.next().charAt(0);
-		 		} while(!(wybor=='w' || wybor=='d' || wybor=='s' || wybor=='a' ));
+		 		} while(!(wybor=='w' || wybor=='a' || wybor=='s' || wybor=='d' ));
 		 		
 		 		int i=0;
 		 		switch(wybor) {
-		 		case 'w':
+		 		case 'w':	
 		 			i=0;
 		 			break;
-		 		case 'd':
+		 		case 'a':
 		 			i=1;
 		 			break;
 		 		case 's':
 		 			i=2;
 		 			break;
-		 		case 'a':
+		 		case 'd':
 		 			i=3;
 		 			break;
 		 		};
