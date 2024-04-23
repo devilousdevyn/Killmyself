@@ -1,5 +1,7 @@
 package Killingmyself;
 
+import java.util.Scanner;
+
 public class Places {
 
 	protected String nazwa;
@@ -9,7 +11,7 @@ public class Places {
 	public Places(String nazwa) {
 		this.nazwa=nazwa;
 		}
-	public void dodajPrzejscie(Places w, Places a, Places s, Places d) {
+	public void addWay(Places w, Places a, Places s, Places d) {
 		przejscia[0]=w;
 		przejscia[1]=a;
 		przejscia[2]=s;
@@ -41,4 +43,10 @@ public class Places {
 	public void setOpis(String opis) {
 		this.opis = opis;
 	}
+	
+	
+	
+	private String[] shopItems = {"X", "Y", "Z"};
+    private int[] prices = {10, 20, 5};
+
 }
