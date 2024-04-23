@@ -19,8 +19,8 @@ class Main {
 		 map[8]=new Places("8");
 		 map[9]=new Places("9");
 	 
-		 map[0].dodajPrzejscie(null, null, map[1], null);
-		 map[1].dodajPrzejscie(null, null, null, null);
+		 map[0].dodajPrzejscie(null, null, map[1], map[2]);
+		 map[1].dodajPrzejscie(map[0], null, null, null);
 		 map[2].dodajPrzejscie(map[4], map[0], null, map[3]);
 		 map[3].dodajPrzejscie(null, map[2], null, null);
 		 map[4].dodajPrzejscie(map[5], null, map[2], null);
@@ -32,19 +32,15 @@ class Main {
 	 		
 		 		Places aktualneMiejsce = map[0];
 		 		Scanner scan = new Scanner(System.in);
-		 		char wybor;
-		 		while(!aktualneMiejsce.equals(map[6])) {
+		 		while(!aktualneMiejsce.getNazwa().equals("Boss")) {
 		 			System.out.println("Jesteś w "+ aktualneMiejsce.getNazwa());
 		 			System.out.println("Możesz pójść: " + aktualneMiejsce.wypiszPrzejscia());
-		 		}
-		 		
-		 		do {
-		 			System.out.println("Twój wybór: ");
-		 			wybor = scan.next().charAt(0);
-		 		} while(!(wybor=='w' || wybor=='a' || wybor=='s' || wybor=='d' ));
-		 		
-		 		int i=0;
+		 	
+		 			
+		 		char wybor = scan.next().charAt(0);
+		 		int i = 0;
 		 		switch(wybor) {
+		 		
 		 		case 'w':	
 		 			i=0;
 		 			break;
@@ -57,13 +53,13 @@ class Main {
 		 		case 'd':
 		 			i=3;
 		 			break;
-		 		};
+		 		}
 		 		
 		 		if(aktualneMiejsce.wybierzPrzejscie(i)!=null)
 		 			aktualneMiejsce=aktualneMiejsce.wybierzPrzejscie(i);
 		 		else
 		 			System.out.println("Nieprawidłowy Wybór");
-		 	
+		 		}
 		 		System.out.println("``You're not supposed to be here.`` said God after entering his garden unannounced");
 		 		System.out.println("YOU DIED");
 		 	}

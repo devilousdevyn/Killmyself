@@ -18,10 +18,10 @@ public class Places {
 	
 	public String wypiszPrzejscia() {
 		String drzwi = "";
-		if(przejscia[0]!=null) drzwi+="[w]góra";
-		if(przejscia[1]!=null) drzwi+="[a]lewo";
-		if(przejscia[2]!=null) drzwi+="[s]dół";
-		if(przejscia[3]!=null) drzwi+="[d]prawo";
+		if(przejscia[0]!=null) drzwi+="[w]góra ";
+		if(przejscia[1]!=null) drzwi+="[a]lewo ";
+		if(przejscia[2]!=null) drzwi+="[s]dół ";
+		if(przejscia[3]!=null) drzwi+="[d]prawo ";
 		
 		return drzwi;
 	}
